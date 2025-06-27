@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Tab Manager</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Advanced Tab Manager</h1>
+            <div class="stats">
+                <span id="tab-count">0 tabs</span>
+                <span id="window-count">0 windows</span>
+            </div>
+        </header>
+
+        <div class="search-section">
+            <input type="text" id="search-input" placeholder="Search tabs..." class="search-input">
+            <div class="filter-buttons">
+                <button id="filter-all" class="filter-btn active">All</button>
+                <button id="filter-current" class="filter-btn">Current Window</button>
+                <button id="filter-duplicates" class="filter-btn">Duplicates</button>
+            </div>
+        </div>
+
+        <div class="actions-section">
+            <div class="action-buttons">
+                <button id="close-duplicates" class="action-btn" title="Close duplicate tabs">
+                    <span class="btn-icon">🗑️</span>Close Duplicates
+                </button>
+                <button id="group-by-domain" class="action-btn" title="Group tabs by domain">
+                    <span class="btn-icon">📁</span>Group by Domain
+                </button>
+                <button id="ungroup-all" class="action-btn" title="Ungroup all tabs">
+                    <span class="btn-icon">📂</span>Ungroup All
+                </button>
+                <button id="save-session" class="action-btn" title="Save current session">
+                    <span class="btn-icon">💾</span>Save Session
+                </button>
+                <button id="restore-session" class="action-btn" title="Restore saved session">
+                    <span class="btn-icon">📋</span>Restore Session
+                </button>
+            </div>
+        </div>
+
+        <div class="sort-section">
+            <label for="sort-select">Sort by:</label>
+            <select id="sort-select" class="sort-select">
+                <option value="title">Title</option>
+                <option value="url">URL</option>
+                <option value="domain">Domain</option>
+                <option value="recent">Recently Used</option>
+            </select>
+        </div>
+
+        <div class="tabs-container">
+            <div id="tabs-list" class="tabs-list">
+                <!-- Tabs will be populated here -->
+            </div>
+        </div>
+
+        <div class="bulk-actions" id="bulk-actions" style="display: none;">
+            <button id="close-selected" class="bulk-btn">Close Selected</button>
+            <button id="group-selected" class="bulk-btn">Group Selected</button>
+            <button id="clear-selection" class="bulk-btn secondary">Clear Selection</button>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
